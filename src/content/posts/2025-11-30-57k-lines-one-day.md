@@ -113,7 +113,7 @@ I'm building LxMerit — an AI-powered merit-based learning platform. Today's wo
 
 ## What's Next
 
-The batch import pipeline enables populating entire 36-week courses from a single manifest file. Next sprint: connect to real curriculum and begin Hillsdale content ingestion.
+The batch import pipeline enables populating entire 36-week courses from a single manifest file. Next sprint: connect to real curriculum content.
 
 This dev diary will track velocity as I build — an impromptu LxLedger data point demonstrating that merit can be measured.
 
