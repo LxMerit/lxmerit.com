@@ -8,7 +8,7 @@
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-12">
-	<h1 class="text-4xl font-bold mb-4">Dev Diary</h1>
+	<h1 class="text-4xl font-semibold mb-4" style="font-family: 'Cinzel', serif;">Dev Diary</h1>
 	<p class="text-slate-600 mb-12">
 		Building in public. Shipping fast. Documenting everything.
 	</p>

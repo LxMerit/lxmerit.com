@@ -58,7 +58,7 @@ Six complete sprints in a single day:
 
 ### Key Patterns
 
-- **SITS Access Model**: Student-Instructor-Tutor-System permissions
+- **SITS Access Model**: Student Is The Sun — a gravitational data model where the student record is central and all access radiates outward. Records stay with the student, enabling organization-agnostic portability.
 - **18 roles across 4 contexts**: Platform, Organization, Course, Student
 - **Content deduplication** via SHA-256 hash registry
 - **Manifest-driven course population**: Upload YAML, create a course
@@ -84,6 +84,17 @@ All windows communicate via a JSONL event bus. Events look like:
 ```
 
 Workers emit status. Strategist handles infrastructure. PM tracks completion.
+
+### Session Continuity
+
+Each Claude session has limited context. To maintain continuity across sessions, I use structured handoff files and resurrection scripts that capture:
+
+- Work completed and in-progress
+- Key decisions and their rationale
+- Blockers and next priorities
+- File paths and context needed to resume
+
+When a session ends or context fills, the active window writes a handoff. Resurrection scripts provide bootstrap instructions for fresh sessions — which handoff to load, which tickets to work, which role to assume. The next session reads these files, restoring working memory. This enables multi-day initiatives without losing the thread — AI-assisted stream of consciousness development.
 
 ### Workflow
 
@@ -121,7 +132,7 @@ This dev diary will track velocity as I build — an impromptu LxLedger data poi
 
 *One developer. Six Claude Code windows. One day. 57,415 lines.*
 
-**Patrick J. Hardiman II**
+**Patrick J. Hardiman II**<br>
 *Founder, LxMerit*
 
 **L(earn)² = Merit**

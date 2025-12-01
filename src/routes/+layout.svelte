@@ -13,7 +13,7 @@
 	<link rel="icon" href={favicon} />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
 </svelte:head>
 
 {#if isHomepage}
@@ -25,22 +25,11 @@
 		<header class="border-b" style="background: #1a2f2f; border-color: #3d5f5f;">
 			<nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 				<a href="/" class="text-2xl font-semibold" style="font-family: 'Cinzel', serif; color: #b5c4c4;">
-					LxMerit
+					L<span style="font-size: 0.65em; vertical-align: baseline; position: relative; top: 0.15em;">x</span>Merit
 				</a>
 				<div class="flex items-center gap-6">
 					<a href="/blog" class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>Dev Diary</a>
 					<a href="/about" class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>About</a>
-					<a
-						href="https://github.com/LxMerit"
-						target="_blank"
-						rel="noopener"
-						class="transition-colors"
-						style="color: #8fa8a8;"
-						onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'}
-						onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}
-					>
-						GitHub
-					</a>
 				</div>
 			</nav>
 		</header>
