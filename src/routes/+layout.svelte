@@ -1,8 +1,12 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
+	import { page } from '$app/stores';
 
 	let { children } = $props();
+
+	// Homepage gets minimal layout (no header/footer)
+	let isHomepage = $derived($page.url.pathname === '/');
 </script>
 
 <svelte:head>
@@ -12,35 +16,44 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
 </svelte:head>
 
-<div class="min-h-screen flex flex-col">
-	<header class="bg-white border-b border-slate-200">
-		<nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-			<a href="/" class="text-2xl font-bold text-slate-900">
-				Lx<span class="text-primary-600">Merit</span>
-			</a>
-			<div class="flex items-center gap-6">
-				<a href="/blog" class="text-slate-600 hover:text-slate-900">Dev Diary</a>
-				<a href="/about" class="text-slate-600 hover:text-slate-900">About</a>
-				<a
-					href="https://github.com/LxMerit"
-					target="_blank"
-					rel="noopener"
-					class="text-slate-600 hover:text-slate-900"
-				>
-					GitHub
+{#if isHomepage}
+	<!-- Minimal layout for homepage -->
+	{@render children()}
+{:else}
+	<!-- Full layout with nav for other pages -->
+	<div class="min-h-screen flex flex-col">
+		<header class="border-b" style="background: #1a2f2f; border-color: #3d5f5f;">
+			<nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+				<a href="/" class="text-2xl font-semibold" style="font-family: 'Cinzel', serif; color: #b5c4c4;">
+					LxMerit
 				</a>
+				<div class="flex items-center gap-6">
+					<a href="/blog" class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>Dev Diary</a>
+					<a href="/about" class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>About</a>
+					<a
+						href="https://github.com/LxMerit"
+						target="_blank"
+						rel="noopener"
+						class="transition-colors"
+						style="color: #8fa8a8;"
+						onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'}
+						onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}
+					>
+						GitHub
+					</a>
+				</div>
+			</nav>
+		</header>
+
+		<main class="flex-1" style="background: #f8fafa;">
+			{@render children()}
+		</main>
+
+		<footer class="py-8" style="background: #1a2f2f;">
+			<div class="max-w-6xl mx-auto px-4 text-center">
+				<p class="text-lg font-semibold mb-2" style="font-family: 'Cinzel', serif; color: #b5c4c4;">L(earn)<sup>2</sup> = Merit</p>
+				<p class="text-sm" style="color: #5f7676;">&copy; {new Date().getFullYear()} LxMerit. All rights reserved.</p>
 			</div>
-		</nav>
-	</header>
-
-	<main class="flex-1">
-		{@render children()}
-	</main>
-
-	<footer class="bg-slate-900 text-slate-400 py-8">
-		<div class="max-w-6xl mx-auto px-4 text-center">
-			<p class="text-lg font-semibold text-white mb-2">L(earn)<sup>2</sup> = Merit</p>
-			<p class="text-sm">&copy; {new Date().getFullYear()} LxMerit. All rights reserved.</p>
-		</div>
-	</footer>
-</div>
+		</footer>
+	</div>
+{/if}
