@@ -19,6 +19,9 @@ const config = {
 			precompress: false,
 			strict: true
 		}),
+		paths: {
+			base: process.env.BASE_PATH || ''
+		},
 		prerender: {
 			entries: ['*']
 		}
