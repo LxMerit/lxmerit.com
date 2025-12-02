@@ -24,8 +24,7 @@ const config = {
 		},
 		prerender: {
 			entries: ['*']
-		},
-		trailingSlash: 'always'
+		}
 	}
 };
 
