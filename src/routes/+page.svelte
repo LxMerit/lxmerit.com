@@ -223,7 +223,7 @@
 
     <div class="divider"></div>
 
-    <p class="info">L(earn)² = Merit | LxLedger.com</p>
+    <p class="info">L(earn)² = Merit | <a href="https://lxledger.com">LxLedger.com</a></p>
     <p class="info">Launching 2026</p>
 
     <footer>
