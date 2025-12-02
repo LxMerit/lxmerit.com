@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import VelocityCounter from '$lib/components/VelocityCounter.svelte';
 	let { data } = $props();
 </script>
 
@@ -19,6 +20,8 @@
 			<p class="text-slate-600">By {data.metadata.author}</p>
 		{/if}
 	</header>
+
+	<VelocityCounter totals={data.velocity} />
 
 	<div class="prose">
 		<svelte:component this={data.content} />

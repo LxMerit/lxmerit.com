@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import VelocityCounter from '$lib/components/VelocityCounter.svelte';
 	let { data } = $props();
 </script>
 
@@ -10,6 +11,8 @@
 
 <div class="max-w-4xl mx-auto px-4 py-12">
 	<h1 class="text-4xl font-semibold mb-8" style="font-family: 'Cinzel', serif; color: #1a2f2f;">Dev Diary</h1>
+
+	<VelocityCounter totals={data.velocity} />
 
 	<div class="space-y-8">
 		{#each data.posts as post}

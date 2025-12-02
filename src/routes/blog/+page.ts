@@ -5,6 +5,19 @@ interface PostMeta {
 	date: string;
 	description: string;
 	slug: string;
+	velocity?: {
+		core: number;
+		docs: number;
+		ccli: number;
+	};
+}
+
+interface VelocityTotals {
+	core: number;
+	docs: number;
+	ccli: number;
+	total: number;
+	since: string;
 }
 
 export const load: PageLoad = async () => {
@@ -16,12 +29,28 @@ export const load: PageLoad = async () => {
 			title: module.metadata?.title || 'Untitled',
 			date: module.metadata?.date || '',
 			description: module.metadata?.description || '',
-			slug
+			slug,
+			velocity: module.metadata?.velocity || undefined
 		};
 	});
 
 	// Sort by date descending
 	posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-	return { posts };
+	// Compute cumulative velocity from all posts
+	const velocity: VelocityTotals = posts.reduce(
+		(acc, post) => {
+			if (post.velocity) {
+				acc.core += post.velocity.core || 0;
+				acc.docs += post.velocity.docs || 0;
+				acc.ccli += post.velocity.ccli || 0;
+			}
+			return acc;
+		},
+		{ core: 0, docs: 0, ccli: 0, total: 0, since: '2025-11-30' }
+	);
+
+	velocity.total = velocity.core + velocity.docs + velocity.ccli;
+
+	return { posts, velocity };
 };

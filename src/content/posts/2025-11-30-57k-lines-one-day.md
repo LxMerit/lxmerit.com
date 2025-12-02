@@ -4,7 +4,14 @@ date: "2025-11-30"
 author: "Patrick J. Hardiman II"
 description: "One developer and 6 coordinated Claude Code CLI windows shipped 6 complete sprints and 281 smoke tests in a single day."
 tags: ["dev-diary", "claude", "velocity", "ai-development"]
+velocity:
+  core: 57415
+  docs: 0
+  ccli: 0
 ---
+
+> **Note:** Nov 30 numbers were pre-methodology (rough git --stat estimate).
+> Accurate tokei-based tracking began December 2, 2025.
 
 **November 30, 2025** — One developer and 6 coordinated Claude Code CLI windows shipped 57,415 net lines of production code today. This is the first entry in the LxMerit dev diary.
 
