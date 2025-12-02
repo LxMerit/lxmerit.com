@@ -8,8 +8,8 @@
   <!-- Open Graph (Facebook, LinkedIn, Discord, Slack) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.lxmerit.com/" />
-  <meta property="og:title" content="LxMerit – Classical Education, Merit-Based Learning" />
-  <meta property="og:description" content="Establishing the Lx industry standard for merit-based classical education. L(earn)² = Merit." />
+  <meta property="og:title" content="LxMerit" />
+  <meta property="og:description" content="Classical Curriculum. Instrumented Mastery. Your velocity. Your ledger. L(earn)² = Merit | LxLedger.com" />
   <meta property="og:image" content="https://www.lxmerit.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -17,8 +17,8 @@
   <!-- Twitter/X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://www.lxmerit.com/" />
-  <meta name="twitter:title" content="LxMerit – Classical Education, Merit-Based Learning" />
-  <meta name="twitter:description" content="Establishing the Lx industry standard for merit-based classical education. L(earn)² = Merit." />
+  <meta name="twitter:title" content="LxMerit" />
+  <meta name="twitter:description" content="Classical Curriculum. Instrumented Mastery. Your velocity. Your ledger. L(earn)² = Merit | LxLedger.com" />
   <meta name="twitter:image" content="https://www.lxmerit.com/og-image.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -215,17 +215,16 @@
     <h1>L<span class="subscript-x">x</span>Merit</h1>
 
     <div class="product-name">L(earn)²</div>
-    <div class="product-subtitle">Merit-Based Learning Platform</div>
+    <div class="product-subtitle">Classical Curriculum. Instrumented Mastery. Your velocity. Your ledger.</div>
 
     <p class="tagline">
-      <span class="highlight">LxMerit</span> establishes the Lx industry standard for merit-based classical education.
-      Our <span class="highlight">L(earn)² platform</span> delivers authentic assessment, verifiable lifelong credentials, and learning velocity you own.
+      Our <span class="highlight">L(earn)² platform</span> delivers verified learning velocity as on-chain credentials.
     </p>
 
     <div class="divider"></div>
 
+    <p class="info">L(earn)² = Merit | LxLedger.com</p>
     <p class="info">Launching 2026</p>
-    <p class="info">Building the future of merit-based learning</p>
 
     <footer>
       <p>© 2025 LxMerit • Founded by Patrick Hardiman</p>
