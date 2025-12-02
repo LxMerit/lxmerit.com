@@ -7,6 +7,8 @@
 
 	// Homepage gets minimal layout (no header/footer)
 	let isHomepage = $derived($page.url.pathname === '/');
+	// Error pages get minimal layout too (they have their own full-page styling)
+	let isErrorPage = $derived($page.error !== null);
 </script>
 
 <svelte:head>
@@ -16,8 +18,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
 </svelte:head>
 
-{#if isHomepage}
-	<!-- Minimal layout for homepage -->
+{#if isHomepage || isErrorPage}
+	<!-- Minimal layout for homepage and error pages -->
 	{@render children()}
 {:else}
 	<!-- Full layout with nav for other pages -->
