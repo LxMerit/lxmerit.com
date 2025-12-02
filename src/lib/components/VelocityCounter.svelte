@@ -1,10 +1,12 @@
 <script lang="ts">
 	export let totals: {
+		allTime: number;
 		core: number;
 		docs: number;
 		ccli: number;
-		total: number;
 		since: string;
+		trackingBegan: string;
+		daysTracked: number;
 	};
 
 	function formatNumber(n: number): string {
@@ -19,35 +21,43 @@
 			day: 'numeric'
 		});
 	}
+
+	// Calculate days since project inception
+	function daysSince(dateStr: string): number {
+		const start = new Date(dateStr);
+		const now = new Date();
+		return Math.floor((now.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
+	}
+
+	$: projectDays = daysSince(totals.since);
+	$: avgPerDay = Math.round(totals.allTime / projectDays);
 </script>
 
 <div class="velocity-counter">
-	<h3 class="velocity-title">LxMerit Dev Velocity</h3>
-	<p class="velocity-since">Since: {formatDate(totals.since)}</p>
+	<h3 class="velocity-title">Total Lines Shipped</h3>
+
+	<div class="velocity-hero">
+		<span class="velocity-number">{formatNumber(totals.allTime)}</span>
+		<span class="velocity-unit">lines</span>
+	</div>
+
+	<p class="velocity-meta">
+		Since {formatDate(totals.since)} &bull; {projectDays} days &bull; ~{formatNumber(avgPerDay)}/day
+	</p>
 
 	<div class="velocity-divider"></div>
 
-	<div class="velocity-rows">
-		<div class="velocity-row">
-			<span class="velocity-label">Core Code:</span>
-			<span class="velocity-value">{formatNumber(totals.core)} lines</span>
-		</div>
-		<div class="velocity-row">
-			<span class="velocity-label">Docs:</span>
-			<span class="velocity-value">{formatNumber(totals.docs)} lines</span>
-		</div>
-		<div class="velocity-row">
-			<span class="velocity-label">CCLI Infra:</span>
-			<span class="velocity-value">{formatNumber(totals.ccli)} lines</span>
+	<div class="velocity-breakdown">
+		<div class="breakdown-items">
+			<span class="breakdown-item">Core: {formatNumber(totals.core)}</span>
+			<span class="breakdown-item">Docs: {formatNumber(totals.docs)}</span>
+			<span class="breakdown-item">CCLI: {formatNumber(totals.ccli)}</span>
 		</div>
 	</div>
 
-	<div class="velocity-divider"></div>
-
-	<div class="velocity-row velocity-total">
-		<span class="velocity-label">Total:</span>
-		<span class="velocity-value">{formatNumber(totals.total)} lines</span>
-	</div>
+	<p class="velocity-footer">
+		Audited repo state &bull; No churn, no lies
+	</p>
 </div>
 
 <style>
@@ -57,56 +67,70 @@
 		border-radius: 8px;
 		padding: 1.25rem 1.5rem;
 		margin-bottom: 2rem;
-		max-width: 320px;
+		max-width: 360px;
 	}
 
 	.velocity-title {
 		font-family: 'Cinzel', serif;
-		font-size: 1.125rem;
+		font-size: 0.875rem;
 		font-weight: 600;
-		color: #1a2f2f;
-		margin: 0 0 0.25rem 0;
+		color: #5a7a7a;
+		margin: 0 0 0.5rem 0;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 
-	.velocity-since {
-		font-size: 0.875rem;
-		color: #8fa8a8;
-		margin: 0 0 0.75rem 0;
+	.velocity-hero {
+		display: flex;
+		align-items: baseline;
+		gap: 0.5rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.velocity-number {
+		font-family: 'Cinzel', serif;
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #1a2f2f;
+		line-height: 1;
+	}
+
+	.velocity-unit {
+		font-size: 1rem;
+		color: #5a7a7a;
+	}
+
+	.velocity-meta {
+		font-size: 0.8rem;
+		color: #5a7a7a;
+		margin: 0;
 	}
 
 	.velocity-divider {
 		height: 1px;
 		background: #3d5f5f;
-		opacity: 0.5;
+		opacity: 0.3;
 		margin: 0.75rem 0;
 	}
 
-	.velocity-rows {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
+	.velocity-breakdown {
+		font-size: 0.8rem;
 	}
 
-	.velocity-row {
+	.breakdown-items {
 		display: flex;
-		justify-content: space-between;
-		align-items: baseline;
+		gap: 1rem;
+		flex-wrap: wrap;
 	}
 
-	.velocity-label {
-		font-size: 0.875rem;
+	.breakdown-item {
+		color: #5a7a7a;
+	}
+
+	.velocity-footer {
+		font-size: 0.7rem;
 		color: #8fa8a8;
-	}
-
-	.velocity-value {
-		font-size: 0.875rem;
-		color: #d4dada;
-		font-variant-numeric: tabular-nums;
-	}
-
-	.velocity-total .velocity-label,
-	.velocity-total .velocity-value {
-		font-weight: 600;
-		color: #2d5a5a;
+		margin: 0.75rem 0 0 0;
+		font-style: italic;
 	}
 </style>

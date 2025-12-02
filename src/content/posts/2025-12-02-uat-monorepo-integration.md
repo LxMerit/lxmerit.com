@@ -6,8 +6,8 @@ description: "Building a unified developer workbench for previewing corporate si
 tags: ["dev-diary", "infrastructure", "svelte", "devops"]
 velocity:
   core: 78655
-  docs: 106341
-  ccli: 0
+  docs: 83690
+  ccli: 22887
 ---
 
 **December 2, 2025** — Today we shipped L2DEV-291: a complete UAT pipeline for previewing lxmerit.com and lxledger.com changes before pushing to production on Cloudflare Pages.

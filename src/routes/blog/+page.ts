@@ -5,19 +5,32 @@ interface PostMeta {
 	date: string;
 	description: string;
 	slug: string;
-	velocity?: {
-		core: number;
-		docs: number;
-		ccli: number;
-	};
 }
 
 interface VelocityTotals {
+	allTime: number;
 	core: number;
 	docs: number;
 	ccli: number;
-	total: number;
 	since: string;
+	trackingBegan: string;
+	daysTracked: number;
+}
+
+// Parse the velocity history TSV
+// For now, hardcoded until we have multiple days of snapshots
+// Then we can read from .velocity-history.tsv at build time
+function getLatestVelocity(): VelocityTotals {
+	// Current repo state as of 2025-12-02 (audited, honest)
+	return {
+		allTime: 185232,
+		core: 78655,
+		docs: 83749,
+		ccli: 22828,
+		since: '2025-11-12',
+		trackingBegan: '2025-12-02',
+		daysTracked: 1
+	};
 }
 
 export const load: PageLoad = async () => {
@@ -29,28 +42,14 @@ export const load: PageLoad = async () => {
 			title: module.metadata?.title || 'Untitled',
 			date: module.metadata?.date || '',
 			description: module.metadata?.description || '',
-			slug,
-			velocity: module.metadata?.velocity || undefined
+			slug
 		};
 	});
 
 	// Sort by date descending
 	posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-	// Compute cumulative velocity from all posts
-	const velocity: VelocityTotals = posts.reduce(
-		(acc, post) => {
-			if (post.velocity) {
-				acc.core += post.velocity.core || 0;
-				acc.docs += post.velocity.docs || 0;
-				acc.ccli += post.velocity.ccli || 0;
-			}
-			return acc;
-		},
-		{ core: 0, docs: 0, ccli: 0, total: 0, since: '2025-11-12' }
-	);
-
-	velocity.total = velocity.core + velocity.docs + velocity.ccli;
+	const velocity = getLatestVelocity();
 
 	return { posts, velocity };
 };
