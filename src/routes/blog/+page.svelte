@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	let { data } = $props();
 </script>
 
@@ -15,12 +16,12 @@
 			<article class="border-b border-slate-200 pb-8">
 				<time class="text-sm text-slate-500">{post.date}</time>
 				<h2 class="text-2xl font-semibold mt-1 mb-2" style="font-family: 'Cinzel', serif;">
-					<a href="/blog/{post.slug}" class="hover:text-primary-600 transition-colors" style="color: #1a2f2f;">
+					<a href={`${base}/blog/${post.slug}`} class="hover:text-primary-600 transition-colors" style="color: #1a2f2f;">
 						{post.title}
 					</a>
 				</h2>
 				<p class="text-slate-600">{post.description}</p>
-				<a href="/blog/{post.slug}" class="text-primary-600 hover:text-primary-700 text-sm font-medium mt-2 inline-block">
+				<a href={`${base}/blog/${post.slug}`} class="text-primary-600 hover:text-primary-700 text-sm font-medium mt-2 inline-block">
 					Read more &rarr;
 				</a>
 			</article>

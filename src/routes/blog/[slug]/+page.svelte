@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	let { data } = $props();
 </script>
 
@@ -9,7 +10,7 @@
 
 <article class="max-w-4xl mx-auto px-4 py-12">
 	<header class="mb-8">
-		<a href="/blog" class="text-primary-600 hover:text-primary-700 text-sm font-medium mb-4 inline-block">
+		<a href={`${base}/blog`} class="text-primary-600 hover:text-primary-700 text-sm font-medium mb-4 inline-block">
 			&larr; Back to Dev Diary
 		</a>
 		<time class="block text-sm text-slate-500 mb-2">{data.metadata.date}</time>

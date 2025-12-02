@@ -1,19 +1,21 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 
 	let { children } = $props();
 
 	// Homepage gets minimal layout (no header/footer)
-	let isHomepage = $derived($page.url.pathname === '/');
+	// Account for BASE_PATH: check if pathname equals base or base + '/'
+	let isHomepage = $derived($page.url.pathname === base || $page.url.pathname === base + '/' || $page.url.pathname === '/');
 	// Error pages get minimal layout too (they have their own full-page styling)
 	let isErrorPage = $derived($page.error !== null);
 </script>
 
 <svelte:head>
-	<link rel="icon" href="/favicon.ico" sizes="32x32" />
-	<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
-	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="icon" href={`${base}/favicon.ico`} sizes="32x32" />
+	<link rel="icon" href={`${base}/icon-192.png`} type="image/png" sizes="192x192" />
+	<link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
@@ -27,12 +29,12 @@
 	<div class="min-h-screen flex flex-col">
 		<header class="border-b" style="background: #1a2f2f; border-color: #3d5f5f;">
 			<nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-				<a href="/" class="text-2xl font-semibold" style="font-family: 'Cinzel', serif; color: #b5c4c4;">
+				<a href={`${base}/`} class="text-2xl font-semibold" style="font-family: 'Cinzel', serif; color: #b5c4c4;">
 					L<span style="font-size: 0.65em; vertical-align: baseline; position: relative; top: 0.15em;">x</span>Merit
 				</a>
 				<div class="flex items-center gap-6">
-					<a href="/blog" class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>Dev Diary</a>
-					<a href="/about" class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>About</a>
+					<a href={`${base}/blog`} class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>Dev Diary</a>
+					<a href={`${base}/about`} class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>About</a>
 				</div>
 			</nav>
 		</header>
