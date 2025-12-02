@@ -4,6 +4,23 @@
 <svelte:head>
   <title>LxMerit – Classical Education, Merit-Based Learning</title>
   <meta name="description" content="Establishing the Lx industry standard for merit-based classical education. L(earn)² platform for authentic assessment, verifiable credentials, lifelong learning.">
+
+  <!-- Open Graph (Facebook, LinkedIn, Discord, Slack) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.lxmerit.com/" />
+  <meta property="og:title" content="LxMerit – Classical Education, Merit-Based Learning" />
+  <meta property="og:description" content="Establishing the Lx industry standard for merit-based classical education. L(earn)² = Merit." />
+  <meta property="og:image" content="https://www.lxmerit.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.lxmerit.com/" />
+  <meta name="twitter:title" content="LxMerit – Classical Education, Merit-Based Learning" />
+  <meta name="twitter:description" content="Establishing the Lx industry standard for merit-based classical education. L(earn)² = Merit." />
+  <meta name="twitter:image" content="https://www.lxmerit.com/og-image.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">

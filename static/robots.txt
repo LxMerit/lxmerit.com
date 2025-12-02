@@ -1,3 +1,8 @@
-# allow crawling everything by default
+# LxMerit - www.lxmerit.com
+# Allow all crawlers
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.lxmerit.com/sitemap.xml
