@@ -151,6 +151,26 @@
     color: #b5c4c4;
   }
 
+  .nav {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav a {
+    color: #8fa8a8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.2s ease;
+  }
+
+  .nav a:hover {
+    color: #d4dada;
+  }
+
   @media (max-width: 640px) {
     .logo {
       width: 150px;
@@ -168,6 +188,10 @@
 </style>
 
 <div class="page">
+  <nav class="nav">
+    <a href="/blog">Dev Diary</a>
+    <a href="/about">About</a>
+  </nav>
   <div class="container">
     <img src="/lxm-logo-grey-letters.jpg" alt="LxMerit Shield Logo" class="logo">
 
@@ -183,12 +207,8 @@
 
     <div class="divider"></div>
 
-    <p class="info">Launching 2025</p>
+    <p class="info">Launching 2026</p>
     <p class="info">Building the future of merit-based learning</p>
-
-    <div>
-      <a href="/blog" class="cta">Dev Diary</a>
-    </div>
 
     <footer>
       <p>© 2025 LxMerit • Founded by Patrick Hardiman</p>

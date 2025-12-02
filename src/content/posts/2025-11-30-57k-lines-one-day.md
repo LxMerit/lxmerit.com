@@ -6,8 +6,6 @@ description: "One developer and 6 coordinated Claude Code CLI windows shipped 6 
 tags: ["dev-diary", "claude", "velocity", "ai-development"]
 ---
 
-# 57,415 Lines of Code in One Day
-
 **November 30, 2025** — One developer and 6 coordinated Claude Code CLI windows shipped 57,415 net lines of production code today. This is the first entry in the LxMerit dev diary.
 
 ## The Numbers

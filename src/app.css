@@ -22,13 +22,20 @@ body {
 }
 
 .prose h1 {
+	font-family: 'Cinzel', serif;
 	@apply text-4xl font-bold mb-6 text-slate-900;
 }
 .prose h2 {
+	font-family: 'Cinzel', serif;
 	@apply text-2xl font-semibold mt-10 mb-4 text-slate-800;
 }
 .prose h3 {
+	font-family: 'Cinzel', serif;
 	@apply text-xl font-semibold mt-8 mb-3 text-slate-800;
+}
+.prose h4 {
+	font-family: 'Cinzel', serif;
+	@apply text-lg font-semibold mt-6 mb-2 text-slate-800;
 }
 .prose p {
 	@apply mb-4 leading-relaxed text-slate-700;

@@ -8,17 +8,14 @@
 </svelte:head>
 
 <div class="max-w-4xl mx-auto px-4 py-12">
-	<h1 class="text-4xl font-semibold mb-4" style="font-family: 'Cinzel', serif;">Dev Diary</h1>
-	<p class="text-slate-600 mb-12">
-		Building in public. Shipping fast. Documenting everything.
-	</p>
+	<h1 class="text-4xl font-semibold mb-8" style="font-family: 'Cinzel', serif; color: #1a2f2f;">Dev Diary</h1>
 
 	<div class="space-y-8">
 		{#each data.posts as post}
 			<article class="border-b border-slate-200 pb-8">
 				<time class="text-sm text-slate-500">{post.date}</time>
-				<h2 class="text-2xl font-semibold mt-1 mb-2">
-					<a href="/blog/{post.slug}" class="hover:text-primary-600 transition-colors">
+				<h2 class="text-2xl font-semibold mt-1 mb-2" style="font-family: 'Cinzel', serif;">
+					<a href="/blog/{post.slug}" class="hover:text-primary-600 transition-colors" style="color: #1a2f2f;">
 						{post.title}
 					</a>
 				</h2>
