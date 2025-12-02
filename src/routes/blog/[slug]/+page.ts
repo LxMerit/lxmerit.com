@@ -25,7 +25,7 @@ export const load: PageLoad = async ({ params }) => {
 				}
 				return acc;
 			},
-			{ core: 0, docs: 0, ccli: 0, total: 0, since: '2025-11-30' }
+			{ core: 0, docs: 0, ccli: 0, total: 0, since: '2025-11-12' }
 		);
 
 		velocity.total = velocity.core + velocity.docs + velocity.ccli;

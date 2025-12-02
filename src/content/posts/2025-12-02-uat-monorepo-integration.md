@@ -5,8 +5,8 @@ author: "Patrick J. Hardiman II"
 description: "Building a unified developer workbench for previewing corporate sites before production deployment to Cloudflare Pages."
 tags: ["dev-diary", "infrastructure", "svelte", "devops"]
 velocity:
-  core: 821
-  docs: 1845
+  core: 78655
+  docs: 106341
   ccli: 0
 ---
 
