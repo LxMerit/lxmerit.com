@@ -1,10 +1,17 @@
 {
-  "allTime": 185232,
-  "core": 78655,
-  "docs": 83749,
-  "ccli": 22828,
+  "allTime": 208085,
+  "core": 79104,
+  "docs": 83808,
+  "ccli": 45173,
   "since": "2025-11-12",
   "trackingBegan": "2025-12-02",
-  "lastSnapshot": "2025-12-02",
-  "daysTracked": 1
+  "lastSnapshot": "2025-12-03",
+  "deployedAt": "2025-12-03T11:29:39-06:00",
+  "daysTracked": 2,
+  "daily": {
+    "total": 22853,
+    "core": 449,
+    "docs": 59,
+    "ccli": 22345
+  }
 }
