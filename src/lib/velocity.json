@@ -6,12 +6,12 @@
   "since": "2025-11-12",
   "trackingBegan": "2025-12-02",
   "lastSnapshot": "2025-12-03",
-  "deployedAt": "2025-12-03T11:29:39-06:00",
+  "deployedAt": "2025-12-03T11:32:04-06:00",
   "daysTracked": 2,
   "daily": {
-    "total": 22853,
+    "total": 940,
     "core": 449,
     "docs": 59,
-    "ccli": 22345
+    "ccli": 432
   }
 }

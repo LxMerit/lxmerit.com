@@ -43,6 +43,14 @@ if [ "$DAYS_TRACKED" -gt 1 ]; then
   DAILY_CORE=$((CORE - PREV_CORE))
   DAILY_DOCS=$((DOCS - PREV_DOCS))
   DAILY_CCLI=$((CCLI - PREV_CCLI))
+
+  # Check for CCLI adjustment note in comments (for consolidation events)
+  # Format: # CCLI_ADJUST: -21897 (moved content, not new)
+  CCLI_ADJUST=$(grep '^# CCLI_ADJUST:' "$VELOCITY_TSV" | tail -1 | sed 's/.*CCLI_ADJUST: //' | cut -d' ' -f1)
+  if [ -n "$CCLI_ADJUST" ]; then
+    DAILY_CCLI=$((DAILY_CCLI + CCLI_ADJUST))
+    DAILY_TOTAL=$((DAILY_TOTAL + CCLI_ADJUST))
+  fi
 else
   DAILY_TOTAL=0
   DAILY_CORE=0

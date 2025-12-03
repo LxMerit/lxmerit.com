@@ -127,7 +127,8 @@
 	}
 
 	.velocity-daily {
-		max-width: 200px;
+		max-width: 220px;
+		overflow: hidden;
 	}
 
 	.velocity-delta {
