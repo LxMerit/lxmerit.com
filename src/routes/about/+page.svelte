@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { base } from '$app/paths';
+</script>
+
 <svelte:head>
 	<title>About | LxMerit</title>
 	<meta name="description" content="LxMerit is building the future of learning — where how to think matters more than what to think." />
@@ -67,7 +71,7 @@
 
 	<p class="text-slate-600 mb-2">
 		<strong class="text-slate-800">LxMerit</strong><br>
-		Founded by Patrick Hardiman
+		Founded by <a href="{base}/founder" class="text-teal-700 hover:text-teal-800 no-underline hover:underline">Patrick Hardiman</a>
 	</p>
 
 	<p class="text-slate-600">
