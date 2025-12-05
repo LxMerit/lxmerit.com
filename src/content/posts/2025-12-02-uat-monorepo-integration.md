@@ -5,9 +5,9 @@ author: "Patrick J. Hardiman II"
 description: "Building a unified developer workbench for previewing corporate sites before production deployment to Cloudflare Pages."
 tags: ["dev-diary", "infrastructure", "svelte", "devops"]
 velocity:
-  core: 78655
-  docs: 83690
-  ccli: 22887
+  core: 449
+  docs: 59
+  ccli: 432
 ---
 
 **December 2, 2025** — Today we shipped L2DEV-291: a complete UAT pipeline for previewing lxmerit.com and lxledger.com changes before pushing to production on Cloudflare Pages.

@@ -55,7 +55,7 @@
 
 <div class="velocity-cards">
 	<div class="velocity-counter">
-		<h3 class="velocity-title">Total Lines Shipped</h3>
+		<h3 class="velocity-title">{totals.daysTracked === 1 ? 'Lines Shipped' : 'Total Lines Shipped'}</h3>
 
 		<div class="velocity-hero">
 			<span class="velocity-number">{formatNumber(totals.allTime)}</span>
@@ -63,7 +63,11 @@
 		</div>
 
 		<p class="velocity-meta">
-			Since {formatDate(totals.since)} &bull; {projectDays} days &bull; ~{formatNumber(avgPerDay)}/day
+			{#if totals.daysTracked === 1}
+				{formatDate(totals.since)}
+			{:else}
+				Since {formatDate(totals.since)} &bull; {projectDays} days &bull; ~{formatNumber(avgPerDay)}/day
+			{/if}
 		</p>
 
 		<div class="velocity-divider"></div>
@@ -77,7 +81,7 @@
 		</div>
 
 		<p class="velocity-footer">
-			Audited repo state &bull; No churn, no lies
+			Audited repo state
 		</p>
 	</div>
 

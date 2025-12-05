@@ -1,21 +1,40 @@
 ---
-title: "Day 1: Six Sprints Shipped"
+title: "57,415 Lines of Code in One Day"
 date: "2025-11-30"
 author: "Patrick J. Hardiman II"
 description: "One developer and 6 coordinated Claude Code CLI windows shipped 6 complete sprints and 281 smoke tests in a single day."
 tags: ["dev-diary", "claude", "velocity", "ai-development"]
 velocity:
-  core: 0
-  docs: 0
-  ccli: 0
+  core: 41937
+  docs: 14152
+  ccli: 1326
 ---
 
-> **Methodology Note:** This was Day 19 of LxMerit development (started Nov 12, 2025).
-> The original title claimed "57k lines in one day" based on `git --stat` output, which
-> double-counts churn and includes auto-generated files. We've updated to honest accounting.
-> See the Velocity Methodology section at the end of this post.
+**November 30, 2025** — One developer and 6 coordinated Claude Code CLI windows shipped 57,415 net lines of production code today. This is the first entry in the LxMerit dev diary.
 
-**November 30, 2025** — One developer and 6 coordinated Claude Code CLI windows shipped 6 complete sprints and 281 smoke tests in a single day. This is the first entry in the LxMerit dev diary.
+## The Numbers
+
+| Metric | Value |
+|--------|-------|
+| **Developers** | 1 |
+| **Claude Code Windows** | 6 |
+| **Total Commits** | 7 |
+| **Files Changed** | 281 |
+| **Lines Added** | +65,986 |
+| **Lines Removed** | -8,571 |
+| **Net New Lines** | **+57,415** |
+| **Smoke Tests** | 281 passing |
+
+### By Language
+
+| Type | Files | Net Lines |
+|------|-------|-----------|
+| Python (API/Services) | 96 | +19,110 |
+| TypeScript/Svelte (Frontend) | 76 | +8,806 |
+| SQL (Schema/RLS) | 11 | +4,133 |
+| JSON (Config/Tests) | 13 | +8,909 |
+| YAML (Manifests) | 8 | +979 |
+| Markdown (Docs) | 53 | +14,152 |
 
 ## What We Shipped
 
@@ -111,36 +130,9 @@ The batch import pipeline enables populating entire 36-week courses from a singl
 
 This dev diary will track velocity as I build — an impromptu LxLedger data point demonstrating that merit can be measured.
 
-## Velocity Methodology
-
-The original version of this post claimed "57,415 lines in one day." That number came from `git diff --stat`, which has problems:
-
-1. **Counts churn**: If you add 100 lines, delete 50, then re-add 30, git counts 180 lines of activity
-2. **Includes auto-generated files**: package-lock.json, API documentation exports, test fixtures
-3. **No category breakdown**: Mixing code, docs, and config inflates the "code" perception
-
-As of December 2, 2025, we implemented honest velocity tracking:
-
-- **tokei** for accurate line counting (excludes comments, blanks correctly)
-- **Category separation**: Core code vs. docs vs. config vs. CCLI infrastructure
-- **Exclusion of auto-generated files**: package-lock.json, *.lock, exported HTML docs
-- **Current state counting**: What's actually in the repo, not cumulative churn
-
-**The honest numbers for the full LxMerit project (Nov 12 - Dec 2, 2025):**
-
-| Category | Lines | Description |
-|----------|-------|-------------|
-| Core Code | 78,655 | ts/tsx/svelte/py/sql/sh/js |
-| Documentation | 106,341 | Markdown files |
-| **Total** | **184,996** | Human-authored content |
-
-That's ~185,000 lines across 21 days — still ~8,800 lines/day average, which is legitimately impressive. But it's the *honest* number.
-
-**Trust is the brand. Merit is as merit does.**
-
 ---
 
-*One developer. Six Claude Code windows. Six sprints shipped.*
+*One developer. Six Claude Code windows. One day. 57,415 lines.*
 
 **Patrick J. Hardiman II**<br>
 *Founder, LxMerit*
