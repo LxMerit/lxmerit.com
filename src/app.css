@@ -41,13 +41,13 @@ body {
 	@apply mb-4 leading-relaxed text-slate-700;
 }
 .prose ul {
-	@apply list-disc list-inside mb-4 space-y-1;
+	@apply list-disc list-outside ml-6 mb-4 space-y-2;
 }
 .prose ol {
-	@apply list-decimal list-inside mb-4 space-y-1;
+	@apply list-decimal list-outside ml-6 mb-4 space-y-2;
 }
 .prose li {
-	@apply text-slate-700;
+	@apply text-slate-700 pl-1;
 }
 .prose code {
 	@apply bg-slate-100 px-1.5 py-0.5 rounded text-sm font-mono text-slate-800;
