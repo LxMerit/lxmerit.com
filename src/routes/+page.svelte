@@ -294,6 +294,12 @@
   .highlight {
     color: #8fa8a8;
     font-weight: 400;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .highlight:hover {
+    color: #b5c4c4;
   }
 
   /* ═══════════════════════════════════════════════════════════════════
@@ -590,7 +596,7 @@
     <div class="product-subtitle">Classical Curriculum. Instrumented Mastery. Your velocity. Your ledger.</div>
 
     <p class="tagline">
-      Our <span class="highlight">L(earn)² platform</span> delivers classical curriculum with instrumented mastery tracking.
+      Our <a href="https://learn2.lxmerit.com" class="highlight">L(earn)² platform</a> delivers classical curriculum with instrumented mastery tracking.
     </p>
 
     <!-- ═══════════════════════════════════════════════════════════════════
