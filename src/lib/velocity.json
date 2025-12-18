@@ -1,17 +1,17 @@
 {
-  "allTime": 402380,
-  "core": 179038,
-  "docs": 176819,
-  "ccli": 46523,
+  "allTime": 536132,
+  "core": 278029,
+  "docs": 202206,
+  "ccli": 55897,
   "since": "2025-11-12",
   "trackingBegan": "2025-12-02",
-  "lastSnapshot": "2025-12-07",
-  "deployedAt": "2025-12-07T22:10:00-06:00",
-  "daysTracked": 6,
+  "lastSnapshot": "2025-12-16",
+  "deployedAt": "2025-12-16T23:26:11-06:00",
+  "daysTracked": 16,
   "daily": {
-    "total": 75354,
-    "core": 69730,
-    "docs": 5269,
-    "ccli": 355
+    "total": -6846,
+    "core": 10015,
+    "docs": 4456,
+    "ccli": -21317
   }
 }
