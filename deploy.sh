@@ -89,7 +89,7 @@ cd "$SCRIPT_DIR"
 npm run build
 
 echo "🚀 Deploying to Cloudflare Pages..."
-wrangler pages deploy build --project-name=lxmerit
+wrangler pages deploy .svelte-kit/cloudflare --project-name=lxmerit --commit-dirty=true
 
 echo "✅ Deploy complete!"
 echo "   Preview: https://lxmerit.pages.dev"

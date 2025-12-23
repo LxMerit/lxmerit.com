@@ -87,7 +87,7 @@ cd "$SCRIPT_DIR"
 npm run build
 
 echo "🚀 Deploying to Cloudflare Pages (UAT branch)..."
-wrangler pages deploy build --project-name=lxmerit --branch=uat
+wrangler pages deploy .svelte-kit/cloudflare --project-name=lxmerit --branch=uat --commit-dirty=true
 
 echo ""
 echo "✅ UAT Deploy complete!"

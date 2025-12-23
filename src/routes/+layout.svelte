@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
 
-	let { children } = $props();
+	let { children, data } = $props();
 
 	// Homepage gets minimal layout (no header/footer)
 	// Account for BASE_PATH: check if pathname equals base or base + '/'

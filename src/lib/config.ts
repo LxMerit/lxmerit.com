@@ -3,59 +3,46 @@
  *
  * Detects environment from hostname at runtime, providing correct
  * cross-site URLs. UAT links to UAT, prod links to prod.
+ *
+ * With adapter-cloudflare, this works during SSR at the edge.
  */
 
-import { browser } from '$app/environment';
-
-type Environment = 'production' | 'uat' | 'local';
+export type SiteUrls = {
+  lxmerit: string;
+  lxledger: string;
+  learn2: string;
+};
 
 /**
- * Detect current environment from hostname
+ * Get cross-site URLs based on hostname.
+ * @param hostname - The hostname to detect environment from
  */
-export function getEnvironment(): Environment {
-  if (!browser) return 'local';
+export function getSiteUrls(hostname?: string): SiteUrls {
+  // Use provided hostname, or try window.location, or default to prod
+  const host = hostname ?? (typeof window !== 'undefined' ? window.location.hostname : 'www.lxmerit.com');
 
-  const hostname = window.location.hostname;
-
-  if (hostname.includes('uat') || hostname.includes('-uat')) {
-    return 'uat';
+  // UAT detection
+  if (host.includes('uat') || host.includes('-uat')) {
+    return {
+      lxmerit: 'https://www-uat.lxmerit.com',
+      lxledger: 'https://www-uat.lxledger.com',
+      learn2: 'https://learn2-uat.lxmerit.com',
+    };
   }
 
-  if (hostname === 'localhost' || hostname === '127.0.0.1') {
-    return 'local';
+  // Local development
+  if (host === 'localhost' || host === '127.0.0.1') {
+    return {
+      lxmerit: 'http://localhost:3000/lxmerit',
+      lxledger: 'http://localhost:3000/lxledger',
+      learn2: 'http://localhost:5173',
+    };
   }
 
-  return 'production';
+  // Production
+  return {
+    lxmerit: 'https://www.lxmerit.com',
+    lxledger: 'https://www.lxledger.com',
+    learn2: 'https://learn2.lxmerit.com',
+  };
 }
-
-/**
- * Cross-site URLs based on current environment
- */
-export function getSiteUrls() {
-  const env = getEnvironment();
-
-  switch (env) {
-    case 'uat':
-      return {
-        lxmerit: 'https://www-uat.lxmerit.com',
-        lxledger: 'https://www-uat.lxledger.com',
-        learn2: 'https://learn2-uat.lxmerit.com',
-      };
-    case 'local':
-      return {
-        lxmerit: 'http://localhost:3000/lxmerit',
-        lxledger: 'http://localhost:3000/lxledger',
-        learn2: 'http://localhost:5173',
-      };
-    default: // production
-      return {
-        lxmerit: 'https://www.lxmerit.com',
-        lxledger: 'https://www.lxledger.com',
-        learn2: 'https://learn2.lxmerit.com',
-      };
-  }
-}
-
-// Cached at module load
-export const SITE_URLS = getSiteUrls();
-export const ENV = getEnvironment();

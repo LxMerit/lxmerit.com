@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { SITE_URLS } from '$lib/config';
 
 	// ═══════════════════════════════════════════════════════════════════
 	// Waitlist Form State (Svelte 5 Reactivity)
@@ -597,7 +597,7 @@
     <div class="product-subtitle">Classical Curriculum. Instrumented Mastery. Your velocity. Your ledger.</div>
 
     <p class="tagline">
-      Our <a href={SITE_URLS.learn2} class="highlight">L(earn)² platform</a> delivers classical curriculum with instrumented mastery tracking.
+      Our <a href={$page.data.siteUrls.learn2} class="highlight">L(earn)² platform</a> delivers classical curriculum with instrumented mastery tracking.
     </p>
 
     <!-- ═══════════════════════════════════════════════════════════════════
@@ -660,7 +660,7 @@
 
     <div class="divider"></div>
 
-    <p class="info">L(earn)² = Merit | <a href={SITE_URLS.lxledger}>LxLedger.com</a></p>
+    <p class="info">L(earn)² = Merit | <a href={$page.data.siteUrls.lxledger}>LxLedger.com</a></p>
     <p class="info">Launching 2026</p>
 
     <footer>
