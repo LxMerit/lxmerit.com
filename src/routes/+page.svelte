@@ -130,7 +130,7 @@
 				body: JSON.stringify({
 					email: email.trim().toLowerCase(),
 					turnstile_token: turnstileToken,
-					source: 'lxmerit.com'
+					source: window.location.hostname
 				}),
 			});
 
