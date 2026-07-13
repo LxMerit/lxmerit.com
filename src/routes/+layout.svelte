@@ -46,7 +46,12 @@
 		<footer class="py-8" style="background: #1a2f2f;">
 			<div class="max-w-6xl mx-auto px-4 text-center">
 				<p class="text-lg font-semibold mb-2" style="font-family: 'Cinzel', serif; color: #b5c4c4;">L(earn)<sup>2</sup> = Merit</p>
-				<p class="text-sm" style="color: #5f7676;">&copy; {new Date().getFullYear()} LxMerit. All rights reserved.</p>
+				<p class="text-sm mb-3" style="color: #5f7676;">&copy; {new Date().getFullYear()} LxMerit LLC. All rights reserved.</p>
+				<p class="text-sm flex items-center justify-center gap-3">
+					<a href={`${base}/privacy`} class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>Privacy Policy</a>
+					<span style="color: #3d5f5f;">&middot;</span>
+					<a href={`${base}/sms`} class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>SMS Notifications</a>
+				</p>
 			</div>
 		</footer>
 	</div>

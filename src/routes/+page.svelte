@@ -526,6 +526,18 @@
     color: #b5c4c4;
   }
 
+  .legal-links {
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .legal-links .sep {
+    color: #3d5f5f;
+  }
+
   .nav {
     position: absolute;
     top: 1.5rem;
@@ -664,9 +676,14 @@
     <p class="info">Launching 2026</p>
 
     <footer>
-      <p>© 2025 LxMerit • Founded by Patrick Hardiman</p>
+      <p>© {new Date().getFullYear()} LxMerit LLC • Founded by Patrick Hardiman</p>
       <p style="margin-top: 0.5rem;">
         <a href="mailto:patrick@lxmerit.com">patrick@lxmerit.com</a>
+      </p>
+      <p class="legal-links">
+        <a href={`${base}/privacy`}>Privacy Policy</a>
+        <span class="sep">•</span>
+        <a href={`${base}/sms`}>SMS Notifications</a>
       </p>
     </footer>
   </div>
