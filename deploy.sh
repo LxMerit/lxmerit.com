@@ -46,7 +46,10 @@ if [ "$DAYS_TRACKED" -gt 1 ]; then
 
   # Check for CCLI adjustment note in comments (for consolidation events)
   # Format: # CCLI_ADJUST: -21897 (moved content, not new)
-  CCLI_ADJUST=$(grep '^# CCLI_ADJUST:' "$VELOCITY_TSV" | tail -1 | sed 's/.*CCLI_ADJUST: //' | cut -d' ' -f1)
+  # `|| true`: the note is OPTIONAL. Without it, grep's no-match exit 1 rides
+  # pipefail up to set -e and kills the deploy silently, before the build —
+  # which is exactly what it had been doing.
+  CCLI_ADJUST=$(grep '^# CCLI_ADJUST:' "$VELOCITY_TSV" | tail -1 | sed 's/.*CCLI_ADJUST: //' | cut -d' ' -f1 || true)
   if [ -n "$CCLI_ADJUST" ]; then
     DAILY_CCLI=$((DAILY_CCLI + CCLI_ADJUST))
     DAILY_TOTAL=$((DAILY_TOTAL + CCLI_ADJUST))
