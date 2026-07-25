@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title>Features | LxMerit</title>
-	<meta name="description" content="Inside L(earn)² — the classical library, guided learning with drills and lesson plans, the LxLedger merit record, and household tools. A product map for parents." />
+	<meta name="description" content="Inside L(earn)² — the classical library, Advanced Learning Tools with drills and lesson plans, and the LxLedger merit record. A product map for parents." />
 </svelte:head>
 
 <div class="max-w-3xl mx-auto px-6 py-12 font-sans">
