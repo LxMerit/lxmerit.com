@@ -4,20 +4,21 @@
 
 <svelte:head>
 	<title>About | LxMerit</title>
-	<meta name="description" content="LxMerit is building the future of learning — where how to think matters more than what to think." />
+	<meta name="description" content="LxMerit brings the classical one-room-schoolhouse canon home — real books, mastery you can see, and less paperwork for the parent." />
 </svelte:head>
 
 <div class="max-w-3xl mx-auto px-6 py-12">
 	<h1 class="text-4xl font-semibold mb-8 text-slate-900" style="font-family: 'Cinzel', serif;">About L<span style="font-size: 0.65em; vertical-align: baseline; position: relative; top: 0.15em;">x</span>Merit</h1>
 
 	<p class="text-xl text-slate-700 mb-6 leading-relaxed">
-		LxMerit is building the future of learning — one where <em>how</em> to think matters
-		more than <em>what</em> to think.
+		LxMerit helps families teach the classical way at home — where <em>how</em> to think
+		matters more than <em>what</em> to think.
 	</p>
 
 	<p class="text-slate-600 mb-10 leading-relaxed">
-		We are replacing seat-time, credentials, and institutional gatekeeping with something
-		simpler and truer: <strong class="text-slate-800">demonstrable merit</strong>.
+		We measure the thing that actually matters —
+		<strong class="text-slate-800">demonstrable merit</strong> — and hand parents the
+		tools to teach it without drowning in paperwork.
 	</p>
 
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">L(earn)²</h2>
@@ -44,12 +45,9 @@
 
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">L<span style="font-size: 0.65em; vertical-align: baseline; position: relative; top: 0.15em;">x</span>Ledger</h2>
 
-	<p class="text-slate-600 mb-2 leading-relaxed">
-		Your learning record belongs to you — permanently.
-	</p>
-
 	<p class="text-slate-600 mb-10 leading-relaxed">
-		Immutable, portable, and owned by the learner.
+		Your child's learning record belongs to your family — a permanent, portable record of
+		what they've truly mastered, kept for good.
 	</p>
 
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">The Equation</h2>
