@@ -20,7 +20,7 @@
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">The Classical Library</h2>
 
 	<p class="text-slate-600 mb-4 leading-relaxed">
-		The public-domain books that built American literacy, digitized page-for-page and
+		The books that built American literacy, digitized page-for-page and
 		ready to read in the browser — original woodcuts and all, not melted down into
 		modern worksheets.
 	</p>

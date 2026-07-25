@@ -18,7 +18,7 @@
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">L(earn)²</h2>
 
 	<p class="text-slate-600 mb-4 leading-relaxed">
-		A modern home for the classical curriculum — the public-domain books that actually
+		A modern home for the classical curriculum — the books that actually
 		built American literacy, the McGuffey Readers and the one-room-schoolhouse canon,
 		faithfully presented, not watered down into forgettable worksheets. It measures
 		the only things that actually identify capability:
