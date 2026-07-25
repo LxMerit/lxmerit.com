@@ -31,7 +31,7 @@
 		<li><strong class="text-slate-800">Euclid's Elements &amp; Ray's Geometry</strong> — real geometry, worked the classical way</li>
 		<li><strong class="text-slate-800">Latin</strong> — a full sequence from grammar foundations through Caesar's <em>Gallic War</em></li>
 		<li><strong class="text-slate-800">History</strong> — Ancient Greece, Ancient Rome, and American history</li>
-		<li><strong class="text-slate-800">Spencerian Penmanship</strong> — the flowing hand of the 19th century, learned the way it was meant to be, by movement and practice rather than tracing. For the real thing, we recommend a genuine slate and soapstone pencil — the same surface the one-room schoolhouse wrote on</li>
+		<li><strong class="text-slate-800">Spencerian Penmanship</strong> — the flowing hand of the 19th century, learned the way it was meant to be, by movement and practice rather than tracing. Animated lessons show every letter forming stroke by stroke, built on Spencer's Principles — the handful of elementary strokes every letter is drawn from. For the real thing, we recommend a genuine slate and soapstone pencil — the same surface the one-room schoolhouse wrote on</li>
 	</ul>
 
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">Advanced Learning Tools</h2>
