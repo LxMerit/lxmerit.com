@@ -19,7 +19,7 @@
 
 	<p class="text-slate-600 mb-4 leading-relaxed">
 		A modern home for the classical curriculum — the books that actually
-		built American literacy, the McGuffey Readers and the one-room-schoolhouse canon,
+		built American literacy, the McGuffey's Readers and the one-room-schoolhouse canon,
 		faithfully presented, not watered down into forgettable worksheets. It measures
 		the only things that actually identify capability:
 	</p>

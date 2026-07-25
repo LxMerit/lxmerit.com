@@ -26,7 +26,7 @@
 	</p>
 
 	<ul class="list-disc list-inside mb-6 space-y-2 text-slate-600 ml-4">
-		<li><strong class="text-slate-800">McGuffey Readers</strong> (Primer through Sixth) — America's original reading curriculum, with page-by-page audio narration and word-by-word highlighting for early readers</li>
+		<li><strong class="text-slate-800">McGuffey's Readers</strong> (Primer through Sixth) — America's original reading curriculum, with page-by-page audio narration and word-by-word highlighting for early readers</li>
 		<li><strong class="text-slate-800">Ray's Arithmetic</strong> — the math that educated generations, Primary through Intellectual</li>
 		<li><strong class="text-slate-800">Euclid's Elements &amp; Ray's Geometry</strong> — real geometry, worked the classical way</li>
 		<li><strong class="text-slate-800">Latin</strong> — a full sequence from grammar foundations through Caesar's <em>Gallic War</em></li>
@@ -69,7 +69,7 @@
 	</p>
 
 	<p class="text-sm text-slate-500 italic border-t border-slate-200 pt-6 leading-relaxed">
-		L(earn)² is growing. Some features shown here are fully live today — the McGuffey Primer
+		L(earn)² is growing. Some features shown here are fully live today — the McGuffey's Primer
 		reader and its drills lead the way — while others across the wider library are in active
 		development and rolling out as we expand.
 	</p>
