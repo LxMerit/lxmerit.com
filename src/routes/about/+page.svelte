@@ -61,13 +61,6 @@
 		Own the result forever.
 	</p>
 
-	<div class="my-12 py-8 border-t border-b border-slate-200">
-		<p class="text-xl font-medium text-center" style="color: #1a2f2f;">
-			We're not here to fix the old system.<br>
-			We're here to prove the classical curriculum has Merit.
-		</p>
-	</div>
-
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">Contact</h2>
 
 	<p class="text-slate-600 mb-2">
