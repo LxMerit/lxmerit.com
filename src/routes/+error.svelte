@@ -188,7 +188,6 @@
 
 <div class="page">
   <nav class="nav">
-    <a href={`${base}/blog`}>Dev Diary</a>
     <a href={`${base}/about`}>About</a>
   </nav>
 
@@ -209,7 +208,7 @@
 
     <div class="links">
       <a href={`${base}/`} class="link">Return Home</a>
-      <a href={`${base}/blog`} class="link secondary">Read Dev Diary</a>
+      <a href={`${base}/about`} class="link secondary">About LxMerit</a>
     </div>
   </div>
 </div>

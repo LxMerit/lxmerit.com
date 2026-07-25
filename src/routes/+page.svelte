@@ -597,7 +597,6 @@
 
 <div class="page">
   <nav class="nav">
-    <a href={`${base}/blog`}>Dev Diary</a>
     <a href={`${base}/about`}>About</a>
   </nav>
   <div class="container">

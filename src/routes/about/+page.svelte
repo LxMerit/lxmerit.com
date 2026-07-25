@@ -23,7 +23,9 @@
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">L(earn)²</h2>
 
 	<p class="text-slate-600 mb-4 leading-relaxed">
-		A modern platform that faithfully delivers classical curriculum and measures
+		A modern home for the classical curriculum — the public-domain books that actually
+		built American literacy, the McGuffey Readers and the one-room-schoolhouse canon,
+		faithfully presented rather than melted down into edu-blob worksheets. It measures
 		the only things that actually identify capability:
 	</p>
 
@@ -34,8 +36,10 @@
 	</ul>
 
 	<p class="text-slate-600 mb-10 leading-relaxed">
-		Mastery-based progression, real-time intelligent tutoring, and beautiful tools for
-		parents and students who want rigor without busywork.
+		Mastery-based progression and beautiful tools that cut the paper-shuffling — the
+		lesson plans, tracking, and grading admin that steal hours from teaching — so a
+		parent can sit beside the child and teach, not file. The parent remains the teacher;
+		we just carry the load.
 	</p>
 
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">L<span style="font-size: 0.65em; vertical-align: baseline; position: relative; top: 0.15em;">x</span>Ledger</h2>

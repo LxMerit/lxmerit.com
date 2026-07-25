@@ -33,7 +33,6 @@
 					L<span style="font-size: 0.65em; vertical-align: baseline; position: relative; top: 0.15em;">x</span>Merit
 				</a>
 				<div class="flex items-center gap-6">
-					<a href={`${base}/blog`} class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>Dev Diary</a>
 					<a href={`${base}/about`} class="transition-colors" style="color: #8fa8a8;" onmouseenter={(e) => e.currentTarget.style.color = '#d4dada'} onmouseleave={(e) => e.currentTarget.style.color = '#8fa8a8'}>About</a>
 				</div>
 			</nav>
