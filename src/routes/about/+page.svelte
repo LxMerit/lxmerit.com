@@ -15,12 +15,6 @@
 		matters more than <em>what</em> to think.
 	</p>
 
-	<p class="text-slate-600 mb-10 leading-relaxed">
-		We measure the thing that actually matters —
-		<strong class="text-slate-800">demonstrable merit</strong> — and hand parents the
-		tools to teach it without drowning in paperwork.
-	</p>
-
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">L(earn)²</h2>
 
 	<p class="text-slate-600 mb-4 leading-relaxed">
