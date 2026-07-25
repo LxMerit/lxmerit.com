@@ -43,8 +43,8 @@
 	<ul class="list-disc list-inside mb-6 space-y-2 text-slate-600 ml-4">
 		<li><strong class="text-slate-800">Guidance for parents, from the source</strong> — the original readers carried their own instructions to the teacher; we bring that guidance forward, so you're never guessing at the method the book was written for</li>
 		<li><strong class="text-slate-800">Structured lesson plans</strong> — 36 weeks per subject, four days a week: Read, Exercise, Drill, Review</li>
-		<li><strong class="text-slate-800">Adaptive drills</strong> — letters, sounds, sight words, and subject skills, with immediate right/wrong feedback and a clear results screen</li>
-		<li><strong class="text-slate-800">Mastery, not trophies</strong> — every skill reads as Emerging, Strong, or Mastered, so you can see a pupil names most letters cleanly but still confuses <em>b</em> and <em>d</em> — the map that's more useful than one Tuesday quiz</li>
+		<li><strong class="text-slate-800">Adaptive drills</strong> — letters, sounds, sight words, and subject skills. More than a right/wrong buzzer: each drill is a chance to measure learning, surface the gaps that need more attention, and reinforce what the lessons taught — with immediate coaching feedback and a clear results screen</li>
+		<li><strong class="text-slate-800">Mastery, not trophies</strong> — every skill reads as Emerging, Strong, or Mastered, so you can tell which skills need more focus</li>
 	</ul>
 
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">The L<span style="font-size: 0.65em; vertical-align: baseline; position: relative; top: 0.15em;">x</span>Ledger</h2>
