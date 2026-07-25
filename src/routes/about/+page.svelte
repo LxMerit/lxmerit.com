@@ -30,11 +30,16 @@
 		<li>How well you apply knowledge across domains</li>
 	</ul>
 
+	<p class="text-slate-600 mb-6 leading-relaxed">
+		See the whole schoolhouse on the
+		<a href="{base}/features" class="text-teal-700 hover:text-teal-800 no-underline hover:underline">Features page</a>.
+	</p>
+
 	<p class="text-slate-600 mb-10 leading-relaxed">
 		Mastery-based progression and beautiful tools that cut the paper-shuffling — the
 		lesson plans, tracking, and grading admin that steal hours from teaching — so a
 		parent can sit beside the child and teach, not file. The parent remains the teacher;
-		we just carry the load.
+		we help you spend more time instructing and less time on admin and prep.
 	</p>
 
 	<h2 class="text-2xl font-semibold mt-12 mb-4 text-slate-800" style="font-family: 'Cinzel', serif;">L<span style="font-size: 0.65em; vertical-align: baseline; position: relative; top: 0.15em;">x</span>Ledger</h2>
