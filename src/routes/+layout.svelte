@@ -2,6 +2,7 @@
 	import '../app.css';
 	import { page } from '$app/stores';
 	import { base } from '$app/paths';
+	import { adBySlug } from '$lib/waitlist-pages';
 
 	let { children, data } = $props();
 
@@ -9,12 +10,14 @@
 	// Account for BASE_PATH: check if pathname equals base or base + '/'
 	let isHomepage = $derived($page.url.pathname === base || $page.url.pathname === base + '/' || $page.url.pathname === '/');
 	// These pages own the first screen. The site nav would push the form down.
-	let isBareLanding = $derived(
-		$page.url.pathname === '/waitlist' ||
-			$page.url.pathname === `${base}/waitlist` ||
-			$page.url.pathname === '/lp/first-ad' ||
-			$page.url.pathname === `${base}/lp/first-ad`
-	);
+	// An unknown /lp slug is not an ad, so it keeps the site chrome.
+	let isBareLanding = $derived.by(() => {
+		const path = $page.url.pathname;
+		const bare = base && path.startsWith(base) ? path.slice(base.length) || '/' : path;
+		if (bare === '/waitlist') return true;
+		const slug = bare.match(/^\/lp\/([^/]+)$/)?.[1];
+		return !!slug && adBySlug(slug) !== undefined;
+	});
 	// Error pages get minimal layout too (they have their own full-page styling)
 	let isErrorPage = $derived($page.error !== null);
 </script>

@@ -1,8 +1,12 @@
 /**
- * One landing template. One ad entry until WC picks the next.
+ * One landing template at /lp/[slug]. A later ad is another entry here,
+ * not a new route. The list is sized for three to five ads. Only ad #1
+ * is approved. An empty slot is not an entry and is not a page.
  * /waitlist is the generic page and is not an ad.
  */
 import { FIRST_AD_SRC_KEY, WAITLIST_PAGE_SRC_KEY } from './waitlist-source.ts';
+
+export const AD_CAPACITY = 5;
 
 export interface AdStill {
 	src: string;
@@ -12,8 +16,7 @@ export interface AdStill {
 }
 
 export interface AdEntry {
-	id: 'first-ad';
-	path: '/lp/first-ad';
+	id: string;
 	indexed: false;
 	kicker: string;
 	headline: string;
@@ -25,7 +28,6 @@ export interface AdEntry {
 
 export const FIRST_AD: AdEntry = {
 	id: 'first-ad',
-	path: '/lp/first-ad',
 	indexed: false,
 	kicker: 'Not just learning to read.',
 	headline: 'Learn to love reading.',
@@ -40,8 +42,12 @@ export const FIRST_AD: AdEntry = {
 	storageKey: FIRST_AD_SRC_KEY
 };
 
-/** The only ad. Do not append another until WC says so. */
+/** Approved ads only. Do not push a blank entry. */
 export const ADS: readonly AdEntry[] = [FIRST_AD];
+
+export function adBySlug(slug: string): AdEntry | undefined {
+	return ADS.find((ad) => ad.id === slug);
+}
 
 export const GENERIC_WAITLIST = {
 	indexed: true,

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import WaitlistPage from '$lib/WaitlistPage.svelte';
-	import { FIRST_AD } from '$lib/waitlist-pages';
+
+	let { data } = $props();
 </script>
 
-<WaitlistPage ad={FIRST_AD} />
+<WaitlistPage ad={data.ad} />
