@@ -22,7 +22,7 @@ test('the template holds the approved ads and no empty slots', () => {
 	assert.equal(adBySlug('zebra-drill'), ZEBRA_DRILL);
 	assert.equal(adBySlug('dog-drill'), DOG_DRILL);
 	assert.equal(ZEBRA_DRILL.headlineItalic, true);
-	assert.equal(ZEBRA_DRILL.family, undefined);
+	assert.equal(ZEBRA_DRILL.family, 'Classical learning for the whole family.');
 	assert.equal(DOG_DRILL.headlineItalic, true);
 	assert.equal(adBySlug('empty'), undefined);
 	assert.equal(acceptCampaignSrc('x-dog-drill'), 'x-dog-drill');

@@ -73,6 +73,7 @@ export const ZEBRA_DRILL: AdEntry = {
 	kicker: 'Drill to confirm.',
 	headline: 'Practice until mastered.',
 	headlineItalic: true,
+	family: 'Classical learning for the whole family.',
 	still: {
 		src: '/ad2-zebra-drill-still.png',
 		alt: 'The zebra woodcut with the letters N, X, Z, and S.',
