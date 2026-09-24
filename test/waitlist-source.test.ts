@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
 	acceptCampaignSrc,
 	CORP_HOME_SOURCE,
+	CORP_WAITLIST_SOURCE,
 	resolveCampaignSource,
 	signupBody
 } from '../src/lib/waitlist-source.ts';
@@ -24,6 +25,21 @@ test('a valid src is the signup source', () => {
 test('an absent src becomes corp_home', () => {
 	const body = bodyFor(null);
 	assert.equal(JSON.parse(body).source, CORP_HOME_SOURCE);
+});
+
+test('an absent src on /waitlist becomes corp_waitlist', () => {
+	const source = resolveCampaignSource(null, null, CORP_WAITLIST_SOURCE);
+	const body = signupBody(EMAIL, TOKEN, source);
+	assert.equal(JSON.parse(body).source, CORP_WAITLIST_SOURCE);
+});
+
+test('a rejected src on /waitlist is not stored as the source', () => {
+	const bad = 'FB-Anthem';
+	const source = resolveCampaignSource(bad, null, CORP_WAITLIST_SOURCE);
+	const body = signupBody(EMAIL, TOKEN, source);
+	assert.equal(JSON.parse(body).source, CORP_WAITLIST_SOURCE);
+	assert.equal(body.includes(bad), false);
+	assert.equal(acceptCampaignSrc(bad), null);
 });
 
 for (const bad of ['X-illuminated-reading', 'fb.anthem', 'ig_cvc', 'a'.repeat(51)]) {
