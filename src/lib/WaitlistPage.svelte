@@ -30,7 +30,7 @@
 	<div class="copy">
 		{#if ad}
 			<p class="kicker">{ad.kicker}</p>
-			<h1>{ad.headline}</h1>
+			<h1 class:italic={ad.headlineItalic}>{ad.headline}</h1>
 			<p class="family">{ad.family}</p>
 		{:else}
 			<p class="invitation">{GENERIC_WAITLIST.invitationLine}</p>
@@ -97,6 +97,10 @@
 		line-height: 1.15;
 		color: #f4f7f7;
 		text-wrap: balance;
+	}
+
+	h1.italic {
+		font-style: italic;
 	}
 
 	.family {

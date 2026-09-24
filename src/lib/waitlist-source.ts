@@ -12,6 +12,7 @@ export const CORP_WAITLIST_SOURCE = 'corp_waitlist';
 export const CAMPAIGN_SRC_KEY = 'lxm_corp_waitlist_src';
 export const WAITLIST_PAGE_SRC_KEY = 'lxm_corp_waitlist_page_src';
 export const FIRST_AD_SRC_KEY = 'lxm_corp_first_ad_src';
+export const DOG_DRILL_SRC_KEY = 'lxm_corp_dog_drill_src';
 
 const SRC_PATTERN = /^[a-z0-9-]{1,50}$/;
 

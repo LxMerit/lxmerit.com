@@ -1,10 +1,10 @@
 /**
  * One landing template at /lp/[slug]. A later ad is another entry here,
- * not a new route. The list is sized for three to five ads. Only ad #1
- * is approved. An empty slot is not an entry and is not a page.
+ * not a new route. The list is sized for three to five ads. Approved
+ * entries are first-ad and dog-drill. An empty slot is not a page.
  * /waitlist is the generic page and is not an ad.
  */
-import { FIRST_AD_SRC_KEY, WAITLIST_PAGE_SRC_KEY } from './waitlist-source.ts';
+import { DOG_DRILL_SRC_KEY, FIRST_AD_SRC_KEY, WAITLIST_PAGE_SRC_KEY } from './waitlist-source.ts';
 
 export const AD_CAPACITY = 5;
 
@@ -20,6 +20,8 @@ export interface AdEntry {
 	indexed: false;
 	kicker: string;
 	headline: string;
+	/** Second line. Only set when the approved card calls for italic. */
+	headlineItalic?: boolean;
 	family: string;
 	still: AdStill;
 	learnMore: true;
@@ -42,8 +44,25 @@ export const FIRST_AD: AdEntry = {
 	storageKey: FIRST_AD_SRC_KEY
 };
 
+export const DOG_DRILL: AdEntry = {
+	id: 'dog-drill',
+	indexed: false,
+	kicker: 'Drill to find the gap.',
+	headline: 'Practice until mastered.',
+	headlineItalic: true,
+	family: 'Classical learning for the whole family.',
+	still: {
+		src: '/ad3-dog-drill-still.png',
+		alt: 'The dog woodcut with the letters B, P, G, and D.',
+		width: 1080,
+		height: 1920
+	},
+	learnMore: true,
+	storageKey: DOG_DRILL_SRC_KEY
+};
+
 /** Approved ads only. Do not push a blank entry. */
-export const ADS: readonly AdEntry[] = [FIRST_AD];
+export const ADS: readonly AdEntry[] = [FIRST_AD, DOG_DRILL];
 
 export function adBySlug(slug: string): AdEntry | undefined {
 	return ADS.find((ad) => ad.id === slug);
