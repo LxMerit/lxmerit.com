@@ -1,7 +1,14 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import {
+		acceptCampaignSrc,
+		CAMPAIGN_SRC_KEY,
+		resolveCampaignSource,
+		signupBody
+	} from '$lib/waitlist-source';
 
 	// ═══════════════════════════════════════════════════════════════════
 	// Waitlist Form State (Svelte 5 Reactivity)
@@ -111,12 +118,51 @@
 		await submitForm();
 	}
 
+	// A valid ?src= is kept for this tab. Submit reads the URL first, then
+	// this copy, so leaving the homepage and coming back still attributes
+	// the signup. A rejected query is never written here.
+	let carriedSrc = $state<string | null>(null);
+
+	function readStoredSrc(): string | null {
+		if (!browser) return null;
+		try {
+			return sessionStorage.getItem(CAMPAIGN_SRC_KEY);
+		} catch {
+			return null;
+		}
+	}
+
+	function persistSrc(src: string) {
+		if (!browser) return;
+		try {
+			sessionStorage.setItem(CAMPAIGN_SRC_KEY, src);
+		} catch {
+			// Private mode. carriedSrc still covers this page view.
+		}
+	}
+
+	$effect(() => {
+		const seen = acceptCampaignSrc($page.url.searchParams.get('src'));
+		if (!seen) return;
+		carriedSrc = seen;
+		persistSrc(seen);
+	});
+
+	function sourceAtSubmit(): string {
+		const fromUrl = browser ? new URL(window.location.href).searchParams.get('src') : null;
+		const accepted = acceptCampaignSrc(fromUrl);
+		if (accepted) {
+			carriedSrc = accepted;
+			persistSrc(accepted);
+		}
+		return resolveCampaignSource(fromUrl, carriedSrc ?? readStoredSrc());
+	}
+
 	async function submitForm() {
 		status = 'loading';
 		errorMessage = '';
 
 		console.log('submitForm called with token:', turnstileToken ? 'present' : 'MISSING');
-		console.log('Email:', email);
 
 		try {
 			console.log('Fetching:', `${apiUrl}/api/v1/identity/waitlist/signup`);
@@ -127,11 +173,7 @@
 				headers: {
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify({
-					email: email.trim().toLowerCase(),
-					turnstile_token: turnstileToken,
-					source: window.location.hostname
-				}),
+				body: signupBody(email, turnstileToken, sourceAtSubmit()),
 			});
 
 			if (response.ok) {
