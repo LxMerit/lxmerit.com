@@ -182,8 +182,12 @@
 
 <section class="waitlist-section">
 	<div class="waitlist-card">
-		<h2 class="waitlist-title">{title}</h2>
-		<p class="waitlist-subtitle">{subtitle}</p>
+		{#if title}
+			<h2 class="waitlist-title">{title}</h2>
+		{/if}
+		{#if subtitle}
+			<p class="waitlist-subtitle">{subtitle}</p>
+		{/if}
 
 		<form onsubmit={handleSubmit}>
 			<div class="form-row">

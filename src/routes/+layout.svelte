@@ -8,6 +8,10 @@
 	// Homepage gets minimal layout (no header/footer)
 	// Account for BASE_PATH: check if pathname equals base or base + '/'
 	let isHomepage = $derived($page.url.pathname === base || $page.url.pathname === base + '/' || $page.url.pathname === '/');
+	// The ad page owns the first screen. The site nav would push the form down.
+	let isWaitlistAd = $derived(
+		$page.url.pathname === '/waitlist' || $page.url.pathname === `${base}/waitlist`
+	);
 	// Error pages get minimal layout too (they have their own full-page styling)
 	let isErrorPage = $derived($page.error !== null);
 </script>
@@ -21,7 +25,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet" />
 </svelte:head>
 
-{#if isHomepage || isErrorPage}
+{#if isHomepage || isErrorPage || isWaitlistAd}
 	<!-- Minimal layout for homepage and error pages -->
 	{@render children()}
 {:else}
