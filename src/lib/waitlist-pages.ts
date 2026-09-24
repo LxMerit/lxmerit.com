@@ -1,10 +1,15 @@
 /**
  * One landing template at /lp/[slug]. A later ad is another entry here,
  * not a new route. The list is sized for three to five ads. Approved
- * entries are first-ad and dog-drill. An empty slot is not a page.
+ * entries are first-ad, zebra-drill, and dog-drill. An empty slot is not a page.
  * /waitlist is the generic page and is not an ad.
  */
-import { DOG_DRILL_SRC_KEY, FIRST_AD_SRC_KEY, WAITLIST_PAGE_SRC_KEY } from './waitlist-source.ts';
+import {
+	DOG_DRILL_SRC_KEY,
+	FIRST_AD_SRC_KEY,
+	WAITLIST_PAGE_SRC_KEY,
+	ZEBRA_DRILL_SRC_KEY
+} from './waitlist-source.ts';
 
 export const AD_CAPACITY = 5;
 
@@ -22,7 +27,8 @@ export interface AdEntry {
 	headline: string;
 	/** Second line. Only set when the approved card calls for italic. */
 	headlineItalic?: boolean;
-	family: string;
+	/** Omitted when the approved card has no third line. */
+	family?: string;
 	still: AdStill;
 	learnMore: true;
 	storageKey: string;
@@ -61,8 +67,24 @@ export const DOG_DRILL: AdEntry = {
 	storageKey: DOG_DRILL_SRC_KEY
 };
 
+export const ZEBRA_DRILL: AdEntry = {
+	id: 'zebra-drill',
+	indexed: false,
+	kicker: 'Drill to confirm.',
+	headline: 'Practice until mastered.',
+	headlineItalic: true,
+	still: {
+		src: '/ad2-zebra-drill-still.png',
+		alt: 'The zebra woodcut with the letters N, X, Z, and S.',
+		width: 1080,
+		height: 1920
+	},
+	learnMore: true,
+	storageKey: ZEBRA_DRILL_SRC_KEY
+};
+
 /** Approved ads only. Do not push a blank entry. */
-export const ADS: readonly AdEntry[] = [FIRST_AD, DOG_DRILL];
+export const ADS: readonly AdEntry[] = [FIRST_AD, ZEBRA_DRILL, DOG_DRILL];
 
 export function adBySlug(slug: string): AdEntry | undefined {
 	return ADS.find((ad) => ad.id === slug);

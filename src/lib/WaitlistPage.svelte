@@ -19,7 +19,7 @@
 	<title>{ad ? `${ad.headline} | LxMerit` : 'Waitlist | LxMerit'}</title>
 	<meta
 		name="description"
-		content={ad ? ad.family : GENERIC_WAITLIST.invitationLine}
+		content={ad ? ad.family || ad.headline : GENERIC_WAITLIST.invitationLine}
 	/>
 	{#if !indexed}
 		<meta name="robots" content="noindex, nofollow" />
@@ -31,7 +31,9 @@
 		{#if ad}
 			<p class="kicker">{ad.kicker}</p>
 			<h1 class:italic={ad.headlineItalic}>{ad.headline}</h1>
-			<p class="family">{ad.family}</p>
+			{#if ad.family}
+				<p class="family">{ad.family}</p>
+			{/if}
 		{:else}
 			<p class="invitation">{GENERIC_WAITLIST.invitationLine}</p>
 		{/if}
@@ -101,6 +103,7 @@
 
 	h1.italic {
 		font-style: italic;
+		color: #6fa9a2;
 	}
 
 	.family {
